@@ -1,3 +1,6 @@
+// TODO: read from env
+const API_KEY = "YOUR_API_KEY"
+
 async function fetchData(){
     const response = await fetch("https://api.openapi.com/v1/completions", {
         "method": "POST",
@@ -14,6 +17,8 @@ async function fetchData(){
             // top_p: 0.1,
         })
     })
+    const data = await response.json()
+    console.log(data)
 }
 
 
