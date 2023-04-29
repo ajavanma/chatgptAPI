@@ -1,8 +1,9 @@
-fetch("https://api.openapi.com/v1/completions", {
-    "method": "POST",
-    "headers": {
-        Authorization: `Bearer ${API_KEY}`,
-        "Content-Type": "application/json"
+async function fetchData(){
+    const response = await fetch("https://api.openapi.com/v1/completions", {
+        "method": "POST",
+        "headers": {
+            Authorization: `Bearer ${API_KEY}`,
+            "Content-Type": "application/json"
         },
         "body": JSON.stringify({
             model: "text-davinci-003",
@@ -12,4 +13,7 @@ fetch("https://api.openapi.com/v1/completions", {
             // use this or top_p, not both
             // top_p: 0.1,
         })
-})
+    })
+}
+
+
